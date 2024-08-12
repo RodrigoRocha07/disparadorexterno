@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  web:
+    build:  .
+    command: sh -c "uvicorn src.api.main:app --reload --port=8000 --host=0.0.0.0"
+    ports:
+      - 8000:8000
+    #environment:
+    #  - DATABASE_URL=mysql+mysqlconnector://refo9178_crm_impulse_user:dBVd(PlP]Z)3@reforcodev.com/refo9178_crm_impulse
+    volumes:
+      - .:/app
