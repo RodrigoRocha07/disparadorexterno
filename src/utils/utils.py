@@ -12,7 +12,7 @@ contador_global = [0]  # Variável global para contar o número de mensagens env
 n_mensagens_enviadas = [0]  # Variável global para contar o número de mensagens com sucesso (status 200)
 
 def send_sms(phone, msg):
-    url = 'http://0.0.0.0:8001/api_send_sms'
+    url = 'http://0.0.0.0:8002/api_send_sms'
     #url = 'https://api.isendme.com/api?i=1184&token=095d9847-ed43-4486-ba15-45abce76447b' 
     #url = 'http://3.140.194.29:32007/fake_sendspeed'  # Url da api fake
     #url = 'http://0.0.0.0:8002/fake_sendspeed'
