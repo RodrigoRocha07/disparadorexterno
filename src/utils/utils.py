@@ -12,12 +12,14 @@ contador_global = [0]  # Variável global para contar o número de mensagens env
 n_mensagens_enviadas = [0]  # Variável global para contar o número de mensagens com sucesso (status 200)
 
 def send_sms(phone, msg):
-    url = 'http://0.0.0.0:8002/api_send_sms'
+    #url = 'http://0.0.0.0:8002/api_fake'
+    url ='https://disparo.impulsecrm.online/api_fake'
+    
     #url = 'https://api.isendme.com/api?i=1184&token=095d9847-ed43-4486-ba15-45abce76447b' 
-    #url = 'http://3.140.194.29:32007/fake_sendspeed'  # Url da api fake
-    #url = 'http://0.0.0.0:8002/fake_sendspeed'
 
     
+
+    #uvicorn src.api.main:app --host 0.0.0.0 --port 8001
     
     headers = {
         'content-type': 'application/json'
@@ -83,7 +85,7 @@ def enviar_mensagens(lista_telefones, lista_msg, lock):
             print(f"Erro ao enviar mensagem: {e}")
 
 # Função principal para disparar SMS
-def disparo_sms(mensagem, infos, id_campaign, n: int = 200):
+def disparo_sms(mensagem, infos, id_campaign, n: int = 300):
     inicio = time.time()
     
     lista_msg, lista_telefones = preparar_dados(mensagem, infos, id_campaign)
